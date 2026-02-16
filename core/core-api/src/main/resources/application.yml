@@ -6,6 +6,8 @@ spring:
   web:
     resources:
       add-mappings: false
+  config:
+    import: client-dauth.yml, db-core.yml
 
 server:
   tomcat:
@@ -19,21 +21,6 @@ spring:
   config:
     activate:
       on-profile: local
-  datasource:
-    url: jdbc:postgresql://localhost:5432/flick
-    username: flick
-    password: flick
-    driver-class-name: org.postgresql.Driver
-  jpa:
-    hibernate:
-      ddl-auto: validate
-    properties:
-      hibernate:
-        format_sql: true
-    show-sql: true
-  flyway:
-    enabled: true
-    locations: classpath:db/migration
   data:
     redis:
       host: localhost
@@ -43,11 +30,6 @@ jwt:
   secret: flick-v2-local-secret-key-must-be-at-least-32-bytes-long
   access-expiration: 1800000
   refresh-expiration: 604800000
-
-dauth:
-  client-id: ${DAUTH_CLIENT_ID:test-client-id}
-  client-secret: ${DAUTH_CLIENT_SECRET:test-client-secret}
-  redirect-url: ${DAUTH_REDIRECT_URL:http://localhost:3000/callback}
 
 ---
 spring:
