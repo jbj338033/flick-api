@@ -1,0 +1,23 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  flyway:
+    enabled: false
+  docker:
+    compose:
+      enabled: false
+
+dauth:
+  client-id: test-client-id
+  client-secret: test-client-secret
+  redirect-url: http://localhost:8080/callback
+
+jwt:
+  secret: test-secret-key-must-be-at-least-256-bits-long-for-hs256
+
+logging:
+  level:
+    root: WARN
+    com.flick: DEBUG

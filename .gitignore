@@ -1,0 +1,14 @@
+.gradle/
+**/build/
+.kotlin/
+.idea/
+*.iml
+out/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+*.log
+docs/
+CLAUDE.md
